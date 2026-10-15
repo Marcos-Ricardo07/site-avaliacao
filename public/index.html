@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avaliação de Notas</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <h1>Avaliação de Notas</h1>
+  </header>
+
+  <main class="conteudo">
+    <section id="secao-login" class="cartao" hidden>
+      <h2>Entrar</h2>
+      <p>Faça login para cadastrar e consultar notas.</p>
+      <div class="botoes-login">
+        <a class="botao botao-google" href="/auth/google/login">Entrar com Google</a>
+        <a class="botao botao-github" href="/auth/github/login">Entrar com GitHub</a>
+      </div>
+    </section>
+
+    <section id="secao-usuario" class="cartao" hidden>
+      <div class="usuario">
+        <div>
+          <p class="usuario-nome" id="usuario-nome"></p>
+          <p class="usuario-detalhe"><span id="usuario-email"></span> · via <span id="usuario-provedor"></span></p>
+        </div>
+        <button type="button" id="botao-sair" class="botao botao-secundario">Sair</button>
+      </div>
+    </section>
+
+    <section id="secao-notas" class="cartao" hidden>
+      <h2>Cadastrar nota</h2>
+      <form id="form-nota" class="formulario">
+        <label for="campo-aluno">Aluno</label>
+        <input type="text" id="campo-aluno" name="aluno" maxlength="200" required>
+
+        <label for="campo-disciplina">Disciplina</label>
+        <input type="text" id="campo-disciplina" name="disciplina" maxlength="200" required>
+
+        <label for="campo-nota">Nota</label>
+        <input type="number" id="campo-nota" name="nota" step="0.01" required>
+
+        <button type="submit" class="botao">Salvar</button>
+        <p id="mensagem" class="mensagem" role="status"></p>
+      </form>
+
+      <h2>Notas cadastradas</h2>
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Aluno</th>
+            <th>Disciplina</th>
+            <th>Nota</th>
+            <th>Criado em</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+      <p id="sem-notas" class="vazio" hidden>Nenhuma nota cadastrada ainda.</p>
+    </section>
+  </main>
+</body>
+</html>

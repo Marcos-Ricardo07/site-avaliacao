@@ -1,0 +1,9 @@
+name = "site-avaliacao"
+pages_build_output_dir = "public"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "avaliacao-db"
+database_id = "0d9ccdf8-0ae7-4be5-ad17-87a6e64ee31e"
+migrations_dir = "migrations"

@@ -1,0 +1,161 @@
+:root {
+  --fundo: #f4f5f7;
+  --cartao: #ffffff;
+  --texto: #1d2129;
+  --suave: #5f6673;
+  --borda: #d9dce1;
+  --primaria: #2457c5;
+  --erro: #b42318;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #15171c;
+    --cartao: #1f232b;
+    --texto: #e8eaee;
+    --suave: #a3a9b5;
+    --borda: #343a46;
+    --primaria: #6e9bff;
+    --erro: #ff8a80;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.topo {
+  padding: 24px 16px 8px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.conteudo {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+}
+
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.cartao h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.botoes-login {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--primaria);
+  background: var(--primaria);
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao-github {
+  background: #24292f;
+  border-color: #24292f;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--primaria);
+}
+
+.usuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.usuario p {
+  margin: 0;
+}
+
+.usuario-nome {
+  font-weight: 600;
+}
+
+.usuario-detalhe {
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.formulario {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.formulario input {
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.formulario .botao {
+  margin-top: 8px;
+  justify-self: start;
+}
+
+.mensagem {
+  min-height: 1.5em;
+  margin: 4px 0 0;
+  color: var(--suave);
+}
+
+.mensagem.erro {
+  color: var(--erro);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid var(--borda);
+  overflow-wrap: anywhere;
+}
+
+.vazio {
+  color: var(--suave);
+}
