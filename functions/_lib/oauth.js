@@ -42,9 +42,7 @@ export function erro(status, mensagem) {
 
 export async function upsertUsuario(env, provedor, provedorId, nome, email) {
   const linha = await env.DB.prepare(
-    "INSERT INTO usuarios (provedor, provedor_id, nome, email) VALUES (?, ?, ?, ?) " +
-      "ON CONFLICT (provedor, provedor_id) DO UPDATE SET nome = excluded.nome, email = excluded.email " +
-      "RETURNING id"
+    "INSERT INTO usuarios (provedor, provedor_id, nome, email) VALUES (?, ?, ?, ?) ON CONFLICT (provedor, provedor_id) DO UPDATE SET nome = excluded.nome, email = excluded.email RETURNING id"
   )
     .bind(provedor, String(provedorId), nome || null, email || null)
     .first();
