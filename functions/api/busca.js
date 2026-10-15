@@ -5,6 +5,6 @@ export async function onRequestGet({ request, env }) {
   if (!usuario) return json({ erro: "não autenticado" }, 401);
 
   const nome = new URL(request.url).searchParams.get("aluno") || "";
-  const { results } = await env.DB.prepare(`SELECT * FROM notas WHERE aluno = '${nome}'`).all();
+  const { results } = await env.DB.prepare("SELECT * FROM notas WHERE aluno = ?").bind(nome).all();
   return json(results);
 }
